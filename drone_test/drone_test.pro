@@ -62,10 +62,10 @@ HEADERS += \
     platform/inc/LinuxThread.h
 
  INCLUDEPATH += \
-/home/wsn/Documents/QT/drone_test/drone-test/inc\
-/home/wsn/Documents/QT/drone_test/osdk-core/inc\
-/home/wsn/Documents/QT/drone_test/osdk-wrapper/inc\
-/home/wsn/Documents/QT/drone_test/platform/inc
+/home/wsn/Documents/Video_Transport_M100/drone_test/drone-test/inc\
+/home/wsn/Documents/Video_Transport_M100/drone_test/osdk-core/inc\
+/home/wsn/Documents/Video_Transport_M100/drone_test/osdk-wrapper/inc\
+/home/wsn/Documents/Video_Transport_M100/drone_test/platform/inc
 
 LIBS += -lpthread
 
