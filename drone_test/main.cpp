@@ -83,45 +83,32 @@ int main(int argc, char *argv[])
     while(1)
     {
 
-        if(api->getFilter().recvBuf[14]=='c'||show_0)
+        if(api->getFilter().recvBuf[14]=='c')
          {
             show_0 = true;
-            cap0>>frame0;
-            cap1>>frame1;
-
-            imshow("Video",frame0);
-            waitKey(0);
+            cout<<"ccccccccccc"<<endl;
          }
-        if(api->getFilter().recvBuf[14]=='v'||!show_0)
+        if(api->getFilter().recvBuf[14]=='v')
         {
-            cap0>>frame0;
-            cap1>>frame1;
             show_0 = false;
-            imshow("Video",frame1);
-            waitKey(0);
+            cout<<"vvvvvvvvvvv"<<endl;
         }
         if(api->getFilter().recvBuf[14]=='l')
         {
-            cout<<"llllllllll"<<endl;
-            usleep(1000);
             break;
         }
-//        else
-//        {
-//            cap0>>frame0;
-//            cap1>>frame1;
-
-//            if(show_0)
-//            {
-//                imshow("Video",frame0);
-//                waitKey(0);
-//            }
-//            else {
-//                imshow("Video",frame1);
-//                waitKey(0);
-//            }
-
-//        }
+        cap0>>frame0;
+        cap1>>frame1;
+        if(show_0)
+        {
+            imshow("Video",frame0);
+            waitKey(0);
+        }
+        else
+        {
+            imshow("Video",frame1);
+            waitKey(0);
+        }
 
     }
 
