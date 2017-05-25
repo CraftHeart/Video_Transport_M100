@@ -15,6 +15,10 @@
 #include "DJI_App.h"
 #include "DJI_API.h"
 
+//@TODO add by QiuYuBo in 2017-05-25
+#include <iostream>
+using namespace std;
+//end
 using namespace DJI;
 using namespace DJI::onboardSDK;
 
@@ -176,6 +180,26 @@ void DJI::onboardSDK::CoreAPI::recvReqData(Header *protocolHeader)
         break;
       case CODE_FROMMOBILE:
         API_LOG(serialDevice, STATUS_LOG, "Receive data from mobile\n");
+
+        //@TODO add by QiuYuBo in 2017-05-25
+        if(filter.recvBuf[14]=='c')
+         {
+            show_0 = true;
+            cout<<"ccccccccccc"<<endl;
+         }
+
+        if(filter.recvBuf[14]=='v')
+        {
+            show_0 = false;
+            cout<<"vvvvvvvvvvv"<<endl;
+        }
+        if(filter.recvBuf[14]=='l')
+        {
+            isbreak = true;
+            cout<<"lllllllllll"<<endl;
+        }
+        //end
+
         if (fromMobileCallback.callback)
         {
           fromMobileCallback.callback(this, protocolHeader, fromMobileCallback.userData);

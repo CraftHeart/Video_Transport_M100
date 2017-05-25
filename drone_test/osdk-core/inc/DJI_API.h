@@ -750,6 +750,12 @@ private:
   bool wayPointData;
   bool followData;
 
+  //add by QiuYuBo in 2017-05-25
+public:
+  bool show_0;
+  bool isbreak;
+  //end
+
 #ifdef API_BUFFER_DATA
   public:
   void setTotalRead(const size_t &value) { totalRead = value; }

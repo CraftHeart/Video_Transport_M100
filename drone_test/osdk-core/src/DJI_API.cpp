@@ -37,6 +37,11 @@ void CoreAPI::init(HardDriver *sDevice, CallBackHandler userRecvCallback, bool u
   serialDevice = sDevice;
   // serialDevice->init();
 
+  //@TODO add by QiuYubo in 2017-05-25
+  show_0 = true;
+  isbreak = false;
+  //end
+
   seq_num = 0;
   ackFrameStatus = 11;
   broadcastFrameStatus = false;

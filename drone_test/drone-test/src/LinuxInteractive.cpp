@@ -12,7 +12,6 @@
 
 #include "LinuxInteractive.h"
 #include "DJI_VirtualRC.h"
-
 using namespace std;
 
 char userInput()
@@ -84,15 +83,6 @@ void interactiveSpin(CoreAPI* api, Flight* flight, WayPoint* waypointObj, Camera
 {
   bool userExitCommand = false;
 
-  //@todo heartcraft add
-  VirtualRC vrc(api);
-  RadioData vrcdata;
-  BroadcastData bcdata;
-  CommonData comdata;
-  CtrlInfoData cidata;\
-  SDKFilter f;
-  //end!
-
   ackReturnData takeControlStatus;
   ackReturnData releaseControlStatus;
   ackReturnData armStatus;
@@ -134,30 +124,14 @@ void interactiveSpin(CoreAPI* api, Flight* flight, WayPoint* waypointObj, Camera
   while (!userExitCommand)
   {
 
-    //@todo heartcraft add code
-    //gimbal ==> ping heng zhi jia
-    //roll ==> gun dong cheng du
-    //pitch ==> xiang qian qing xie cheng du
-    //yaw ==> pian jiao
-//    vrcdata = vrc.getRCData();
-//    cout<<"gear= "<<vrcdata.gear<<(vrcdata.gear==-10000?" gear is up ":" gear is down")<<endl;
-//    cout<<"roll= "<<vrcdata.roll<<(vrcdata.roll>0?" left handle to right":
-//                                                  (vrcdata.roll==0?" left handle in mid ":" left handle to left"))<<endl;
-//    cout<<"pitch= "<<vrcdata.pitch<<(vrcdata.pitch>0?" right handle to right":
-//                                                  (vrcdata.pitch==0?" right handle in mid ":" right handle to left"))<<endl;
-//    cout<<"yaw= "<<vrcdata.yaw<<(vrcdata.yaw>0?" right handle up":
-//                                                 (vrcdata.yaw==0?" right handle in mid ":" right handle down"))<<endl;
-    //cout<<"throtlle= "<<vrcdata.throttle<<endl;
-
-    if(f.recvBuf[14]=='c')
-        cout<<"take photo"<<endl;
-    if(f.recvBuf[14]=='v')
-        cout<<"take video"<<endl;
-    if(f.recvBuf[14]=='l')
-        cout<<"botton c1 is clicked"<<endl;
-    if(f.recvBuf[14]=='r')
-        cout<<"botton c2 is clicked"<<endl;
-
+//    if(api->getFilter().recvBuf[14]=='c')
+//        cout<<"take photo"<<endl;
+//    if(api->getFilter().recvBuf[14]=='v')
+//        cout<<"take video"<<endl;
+//    if(api->getFilter().recvBuf[14]=='l')
+//        cout<<"botton c1 is clicked"<<endl;
+//    if(api->getFilter().recvBuf[14]=='r')
+//        cout<<"botton c2 is clicked"<<endl;
   }
   return;
 }
